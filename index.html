@@ -1,0 +1,80 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 7. Task 1.</title>
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .GridItem {
+        border: 1px solid #bbb;
+      }
+      #art1 {
+        grid-area: a;
+      }
+      #art2 {
+        grid-area: b;
+      }
+      #art3 {
+        grid-area: c;
+      }
+      #art4 {
+        grid-area: d;
+      }
+      #art5 {
+        grid-area: e;
+      }
+      #regBlock {
+        grid-area: f;
+      }
+      @media (mid-width: 1000px) {
+        main {
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-areas:
+            'a b c'
+            'a b d'
+            'a e f';
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="GridItem" id="art1">
+        <div class="articleHeader">Нам нравятсявоздушные шары</div>
+        <div class="articleDesc">
+          Здесь Вы можете найти много интересного, связанного с воздушными
+          шарами
+        </div>
+      </article>
+      <article class="GridItem" id="art2">
+        <div class="articleHeader">Необычные формы</div>
+        <div class="articleDesc">
+          Почему некоторые из них так необычно выглядят?
+        </div>
+      </article>
+      <article class="GridItem" id="art3">
+        <div class="articleHeader">10 вещей, которые вы</div>
+        <div class="articleDesc">
+          обнаружите, когда летите на воздушном шаре
+        </div>
+      </article>
+      <article class="GridItem" id="art4">
+        <div class="articleHeader">Как воздушные шарызависят от погоды</div>
+        <div class="articleDesc">Горячие воздушные шары</div>
+      </article>
+      <article class="GridItem" id="art5">
+        <div class="articleHeader">Фото воздушных шаров</div>
+        <div class="articleDesc">Праздник форм и размеров</div>
+      </article>
+      <article class="GridItem" id="regBlock">
+        <div class="articleDesc">Зарегестрируйтесь не откладывая.</div>
+        <div class="register"><a href="#">Зарегестрироваться</a></div>
+      </article>
+    </main>
+    <script></script>
+  </body>
+</html>
