@@ -6,11 +6,29 @@
     <title>Homework 7. Task 1.</title>
     <style>
       main {
+        width: 90%;
+        max-width: 800px;
+        height: minmax(600px,900px);
+        background-color: #fff;
+        margin: 50px auto;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(150px,300px);
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-gap: 5px;
+        grid-template-areas:
+          "a"
+          "c"
+          "b"
+          "d"
+          "e"
+          "f";
       }
       .GridItem {
-        border: 1px solid #bbb;
+        background: #fc9;
+        border: 1px solid #f96;
+        border-radius: 5px;
+        padding: 5px;
+        color: #fff;
       }
       #art1 {
         grid-area: a;
@@ -29,14 +47,15 @@
       }
       #regBlock {
         grid-area: f;
+        height: 300px;
       }
-      @media (mid-width: 1000px) {
+      @media (min-width: 1000px) {
         main {
           grid-template-columns: 1fr 1fr 1fr;
           grid-template-areas:
-            'a b c'
-            'a b d'
-            'a e f';
+            "a b c"
+            "a b d"
+            "a e f";
         }
       }
     </style>
