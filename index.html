@@ -1,99 +1,182 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 7. Task 1.</title>
-    <style>
-      main {
-        width: 90%;
-        max-width: 800px;
-        height: minmax(600px,900px);
-        background-color: #fff;
-        margin: 50px auto;
-        display: grid;
-        grid-auto-rows: minmax(150px,300px);
-        /* grid-template-columns: 1fr 1fr 1fr; */
-        grid-gap: 5px;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework 7. Grid adaptive design.</title>
+  <style>
+    #art1 {
+      grid-area: a;
+      background-image: url("images/hero-demo1.jpg");
+      background-position: bottom;
+    }
+
+    #art2 {
+      grid-area: b;
+      background-image: url("images/hero-demo5.jpg");
+    }
+
+    #art3 {
+      grid-area: c;
+      background-image: url("images/hero-demo4.jpg");
+    }
+
+    #art4 {
+      grid-area: d;
+      background-image: url("images/hero-demo3.jpg");
+    }
+
+    #art5 {
+      grid-area: e;
+      background-image: url("images/hero-demo2.jpg");
+    }
+
+    #regBlock {
+      grid-area: f;
+      background-color: maroon;
+      text-align: center;
+
+    }
+
+    .register {
+      text-align: center;
+      width: 66%;
+      background-color: white;
+      padding: 5px;
+      margin: 40px auto;
+      border: 3px solid gray;
+      border-radius: 5px;
+      color: black;
+      text-decoration: none;
+      text-shadow: 0px 1px gray;
+
+    }
+
+    main {
+
+
+      
+      background-color: #fff;
+      /* center on screen */
+      margin: 50px auto;
+      display: grid;
+      
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      /* grid-template-columns: 1fr 1fr 1fr; */
+      /* grid-gap: 5px; */
+
+      /* for mobile */
+      max-width: 400px;
+      grid-auto-rows:  200px;
+      grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f";
+    }
+
+    .GridItem {
+      background: #fc9;
+      border: 1px solid white;
+      border-radius: 2px;
+      padding: 5px;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .articleHeader {
+      text-align: center;
+      margin: 10px auto 30px;
+      font-size: 1.5em;
+      font: bold;
+      text-shadow: 3px 0px black;
+    }
+
+    .articleDesc {
+      margin: 10px;
+      font-size: 1.2em;
+      text-shadow: 2px 2px black;
+    }
+    @media (min-width:600px){
+      main{
+        max-width:600px;
+        grid-auto-rows:  150px;
         grid-template-areas:
-          "a"
-          "c"
-          "b"
-          "d"
-          "e"
-          "f";
+          "a a"
+          "a a"
+          "b d"
+          "b e"
+          "b f"
+          "c f"
+          ;
+        
       }
-      .GridItem {
-        background: #fc9;
-        border: 1px solid #f96;
-        border-radius: 5px;
-        padding: 5px;
-        color: #fff;
+    }
+
+    @media (min-width: 800px) {
+      main {
+        max-width: 940px;
+        grid-auto-rows:  120px;
+        
+        grid-template-areas:
+          "a b d"
+          "a b d"
+          "a b e"
+          "a b f"
+          "a c f"
+          "a c f";
       }
-      #art1 {
-        grid-area: a;
+      .GridItem{
+        background-position: 0% 0%;
+        
       }
-      #art2 {
-        grid-area: b;
-      }
-      #art3 {
-        grid-area: c;
-      }
-      #art4 {
-        grid-area: d;
-      }
-      #art5 {
-        grid-area: e;
-      }
-      #regBlock {
-        grid-area: f;
-        height: 300px;
-      }
-      @media (min-width: 1000px) {
-        main {
-          grid-template-columns: 1fr 1fr 1fr;
-          grid-template-areas:
-            "a b c"
-            "a b d"
-            "a e f";
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <article class="GridItem" id="art1">
-        <div class="articleHeader">Нам нравятсявоздушные шары</div>
-        <div class="articleDesc">
-          Здесь Вы можете найти много интересного, связанного с воздушными
-          шарами
-        </div>
-      </article>
-      <article class="GridItem" id="art2">
-        <div class="articleHeader">Необычные формы</div>
-        <div class="articleDesc">
-          Почему некоторые из них так необычно выглядят?
-        </div>
-      </article>
-      <article class="GridItem" id="art3">
-        <div class="articleHeader">10 вещей, которые вы</div>
-        <div class="articleDesc">
-          обнаружите, когда летите на воздушном шаре
-        </div>
-      </article>
-      <article class="GridItem" id="art4">
-        <div class="articleHeader">Как воздушные шарызависят от погоды</div>
-        <div class="articleDesc">Горячие воздушные шары</div>
-      </article>
-      <article class="GridItem" id="art5">
-        <div class="articleHeader">Фото воздушных шаров</div>
-        <div class="articleDesc">Праздник форм и размеров</div>
-      </article>
-      <article class="GridItem" id="regBlock">
-        <div class="articleDesc">Зарегестрируйтесь не откладывая.</div>
-        <div class="register"><a href="#">Зарегестрироваться</a></div>
-      </article>
-    </main>
-    <script></script>
-  </body>
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <article class="GridItem" id="art1">
+      <div class="articleHeader">Нам нравятсявоздушные шары</div>
+      <div class="articleDesc">
+        Здесь Вы можете найти много интересного, связанного с воздушными
+        шарами
+      </div>
+    </article>
+    <article class="GridItem" id="art2">
+      <div class="articleHeader">Необычные формы</div>
+      <div class="articleDesc">
+        Почему некоторые из них так необычно выглядят?
+      </div>
+    </article>
+    <article class="GridItem" id="art3">
+      <div class="articleHeader">10 вещей, которые вы</div>
+      <div class="articleDesc">
+        обнаружите, когда летите на воздушном шаре
+      </div>
+    </article>
+    <article class="GridItem" id="art4">
+      <div class="articleHeader">Как воздушные шарызависят от погоды</div>
+      <div class="articleDesc">Горячие воздушные шары</div>
+    </article>
+    <article class="GridItem" id="art5">
+      <div class="articleHeader">Фото воздушных шаров</div>
+      <div class="articleDesc">Праздник форм и размеров</div>
+    </article>
+    <article class="GridItem" id="regBlock">
+      <div class="articleDesc">Зарегестрируйтесь не откладывая!</div>
+      <a class="register" href="#">Зарегестрироваться?</a>
+    </article>
+  </main>
+  <script></script>
+</body>
+
 </html>
